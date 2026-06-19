@@ -1,0 +1,17 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void registerUser() 
+{
+    string username, password;
+    cout << "Enter username: ";
+    cin >> username;
+    cout << "Enter password: ";
+    cin >> password;
+    ofstream file(username + ".txt");   // ostream is used to write and ifstream is used to read.
+    file << username << endl;
+    file << password << endl;
+    file.close();
+    cout << "Registration successful!\n";
+}
