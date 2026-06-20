@@ -45,7 +45,7 @@ int main()
     int choice;
 
     do {
-        cout << "\n----- Login and Registration System -----\n";
+        cout << "\n Login and Registration System\n";
         cout << "1. Register\n";
         cout << "2. Login\n";
         cout << "3. Exit\n";
