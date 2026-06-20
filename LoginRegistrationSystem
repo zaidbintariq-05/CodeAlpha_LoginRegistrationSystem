@@ -15,3 +15,56 @@ void registerUser()
     file.close();
     cout << "Registration successful!\n";
 }
+void loginUser() 
+{
+    string username, password;
+    string storedUsername, storedPassword;
+    cout << "Enter username: ";
+    cin >> username;
+    cout << "Enter password: ";
+    cin >> password;
+    ifstream file(username + ".txt");
+    if (!file) 
+	{
+        cout << "User not found!\n";
+        return;
+    }
+    file >> storedUsername >> storedPassword;
+    file.close();
+    if (username == storedUsername && password == storedPassword) 
+	{
+        cout << "Login successful!\n";
+    } 
+	else 
+	{
+        cout << "Invalid password!\n";
+    }
+}
+int main() 
+{
+    int choice;
+
+    do {
+        cout << "\n----- Login and Registration System -----\n";
+        cout << "1. Register\n";
+        cout << "2. Login\n";
+        cout << "3. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            registerUser();
+        } else if (choice == 2) {
+            loginUser();
+        } else if (choice == 3) {
+            cout << "Exiting program...\n";
+        } else 
+		{
+            cout << "Invalid choice!\n";
+        }
+
+    } 
+	while (choice != 3);
+
+    return 0;
+}
